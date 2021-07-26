@@ -16,7 +16,7 @@ function Article({ content }) {
           <React.Fragment key={id} >
             {el.type === "heading" && id === 0 && <Heading as="h2" py="10" textAlign="center" fontSize={fontSizes.heading}>{el.content}</Heading>}
             {el.type === "heading" && id !== 0 && <Heading as="h3" pb="4" fontSize="1.2em">{el.content}</Heading>}
-            {el.type === "link" && <Link href={el.link} passHref><ChakraLink pb="4" fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{el.content}<FontAwesomeIcon style={{ marginLeft: "0.5rem" }} icon={faLink} /></ChakraLink></Link>}
+            {el.type === "link" && <Link href={el.link} passHref><ChakraLink d="block" pb="4" fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{el.content}<FontAwesomeIcon style={{ marginLeft: "0.5rem" }} icon={faLink} /></ChakraLink></Link>}
             {el.type === "text" && <Text pb="4" fontSize={fontSizes.paragraph}>{el.content}</Text>}
             {el.type === "image" && <Image bg="black" objectPosition="center" maxH="70vh" fit="contain" w={["full", , , "50%"]} mb="4" mr={{ "lg": "5" }} float={{ "lg": "left" }} src={el.src} alt={el.alt} />}
           </React.Fragment>)
