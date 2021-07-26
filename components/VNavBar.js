@@ -26,8 +26,8 @@ function VNavBar({ open: pressedOpen }) {
   }, [pressedOpen])
 
   return (
-    <Box d={[(pressedOpen && "block") || (hadTimeToClose && "none") || "block", , , "none"]} as="nav" overflow="hidden" transitionDuration="400ms" transitionProperty="all" h={open ? `${navHeight}rem` : "0rem"}>
-      <Box as="ul" bg="teal.500">
+    <Box bg="teal.500" d={[(pressedOpen && "block") || (hadTimeToClose && "none") || "block", , , "none"]} as="nav" overflow="hidden" transitionDuration="400ms" transitionProperty="all" h={open ? `${navHeight}rem` : "0rem"}>
+      <Box as="ul">
         <Link href="/">
           <Button
             fontSize={fontSizes.paragraph}

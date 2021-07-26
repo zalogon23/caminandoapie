@@ -14,7 +14,7 @@ function Header() {
 
   return (
     <Box as="header">
-      <Box d="flex" alignItems="center" justifyContent="space-between" bg="teal.400" py="3" px="2">
+      <Box maxH="15vh" d="flex" alignItems="center" justifyContent="space-between" bg="teal.400" py="3" px="2">
         <Box d="flex" alignItems="center">
           <Link href="/">
             <IconButton colorScheme="teal" aria-label="Ir a la pagina de inicio" rounded="full">
