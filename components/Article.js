@@ -17,7 +17,13 @@ function Article({ content }) {
             {el.type === "heading" && id === 0 && <Heading as="h2" py="10" textAlign="center" fontSize={fontSizes.heading}>{el.content}</Heading>}
             {el.type === "heading" && id !== 0 && <Heading as="h3" pb="4" fontSize="1.2em">{el.content}</Heading>}
             {el.type === "link" && <Link href={el.link} passHref><ChakraLink d="block" pb="4" fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{el.content}<FontAwesomeIcon style={{ marginLeft: "0.5rem" }} icon={faLink} /></ChakraLink></Link>}
-            {el.type === "text" && <Text pb="4" fontSize={fontSizes.paragraph}>{el.content}</Text>}
+            {el.type === "text" && <Text pb="4" fontSize={fontSizes.paragraph}>{
+              el.content.map(piece => {
+                if (piece.type === "strong") return (<Text as="strong">{piece.text}</Text>)
+                if (piece.type === "link") return (<Link href={piece.link} passHref><ChakraLink fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{piece.text}</ChakraLink></Link>)
+                return piece
+              })
+            }</Text>}
             {el.type === "image" && <Image bg="black" objectPosition="center" maxH="70vh" fit="contain" w={["full", , , "50%"]} mb="4" mr={{ "lg": "5" }} float={{ "lg": "left" }} src={el.src} alt={el.alt} />}
           </React.Fragment>)
       }
@@ -25,23 +31,41 @@ function Article({ content }) {
   )
 
   function styleContent(content) {
-    return content.split("<").map(el => {
-      let value;
+    let openParagraph = false
+    const result = []
+    content.split("<").forEach(el => {
       console.log(el)
       if (el.indexOf("h") === 0) {
-        value = { type: "heading", content: el.slice(el.indexOf(">") + 1) }
+        openParagraph = false
+        result.push({ type: "heading", content: el.slice(el.indexOf(">") + 1) })
+        return
+      } else if(el.indexOf("/p") === 0){
+        openParagraph = false
+        return
+      }else if (el.indexOf("/") === 0 && openParagraph) {
+        console.log(el)
+        result[result.length - 1].content.push(el.slice(el.indexOf(">") + 1))
+        return
+      } else if (el.indexOf("strong>") === 0) {
+        if (!openParagraph) return
+        result[result.length - 1].content.push({ type: "strong", text: el.slice(el.indexOf(">") + 1) })
+        return
+      } else if (el.indexOf("a") === 0) {
+        if(openParagraph){ result[result.length - 1].content.push({ type: "link", link: el.slice(el.indexOf('href="') + 6, el.indexOf('"', el.indexOf('href="') + 6)), text: el.slice(el.indexOf(">") + 1) }); return}
+        result.push({ type: "link", link: el.slice(el.indexOf('href="') + 6, el.indexOf('"', el.indexOf('href="') + 6)), content: el.slice(el.indexOf(">") + 1) })
+        return
+      } else if (el.indexOf("p") === 0) {
+        openParagraph = true
+        result.push({ type: "text", content: [el.slice(el.indexOf(">") + 1)] })
+        return
+      } else if (el.indexOf("img") === 0) {
+        openParagraph = false
+        result.push({ type: "image", src: el.slice(el.indexOf('src="') + 5, el.indexOf('"', el.indexOf('src="') + 5)), alt: el.slice(el.indexOf('alt="') + 5, el.indexOf('"', el.indexOf('alt="') + 5)) })
+        return
       }
-      if (el.indexOf("a") === 0) {
-        value = { type: "link", link: el.slice(el.indexOf('href="') + 6, el.indexOf('"', el.indexOf('href="') + 6)), content: el.slice(el.indexOf(">") + 1) }
-      }
-      if (el.indexOf("p") === 0) {
-        value = { type: "text", content: el.slice(el.indexOf(">") + 1) }
-      }
-      if (el.indexOf("img") === 0) {
-        value = { type: "image", src: el.slice(el.indexOf('src="') + 5, el.indexOf('"', el.indexOf('src="') + 5)), alt: el.slice(el.indexOf('alt="') + 5, el.indexOf('"', el.indexOf('alt="') + 5)) }
-      }
-      return value
-    }).filter(val => val !== undefined)
+    })
+    console.log(result)
+    return result
   }
 }
 
