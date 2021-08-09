@@ -10,7 +10,7 @@ function Article({ content }) {
   const styledContent = styleContent(content)
 
   return (
-    <Box as="section" px="2" w="full" maxW="850px" mx="auto" fontSize={fontSizes.paragraph}>
+    <Box style={{ clear: "both" }} as="section" px="2" w="full" maxW="850px" mx="auto" pb="8" fontSize={fontSizes.paragraph}>
       {
         styledContent.map((el, id) =>
           <React.Fragment key={id} >
@@ -24,7 +24,7 @@ function Article({ content }) {
                 return piece
               })
             }</Text>}
-            {el.type === "image" && <Image bg="black" objectPosition="center" maxH="70vh" fit="contain" w={["full", , , "50%"]} mb="4" ml={{ "lg": el.dir === "left" ? "0": "5" }} mr={{ "lg": el.dir === "left" ? "5": "0" }} float={{ "lg": el.dir }} src={el.src} alt={el.alt} />}
+            {el.type === "image" && <Image objectPosition="center" maxH="70vh" fit="contain" w={["full", , , "50%"]} mb="8" ml={{ "lg": el.dir === "left" ? "0": "5" }} mr={{ "lg": el.dir === "left" ? "5": "0" }} float={{ "lg": el.dir }} src={el.src} alt={el.alt} />}
           </React.Fragment>)
       }
     </Box >

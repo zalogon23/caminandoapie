@@ -4,6 +4,10 @@ import EmailRequest from "../components/EmailRequest";
 import Hero from "../components/Hero";
 import SEOHead from "../components/SEOHead";
 import queries from "../lib/queries";
+import Card from "../components/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { Divider } from "@chakra-ui/react";
 
 export default function Home({ content }) {
   console.log(content)
@@ -14,24 +18,11 @@ export default function Home({ content }) {
       <Hero smImage="/herosmall.jpg" bigImage="/hero.jpg">
         <EmailRequest />
       </Hero>
-      <Article content={content}
-      // {`
-      // <h2>Nos vamos a dedicar a la pesca indiscriminada</h2>
-      // <p>Nos vamos a dedicar <strong>algo</strong> a la pesca indiscriminada Nos vamos <a href="/nosotros">Esto te lleva a otro lado</a> a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada</p>
-      // <img src="herosmall.jpg" alt="la conche la lora"/>
-      // <h3>Esto sería un subtítulo...</h3>
-      // <p>Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada</p>
-      // <p>Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada</p>
-      // <p>Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada</p>
-      // <p>Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada</p>
-      // <p>Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada</p>
-      // <img src="herosmall.jpg" alt="la conche la lora"/>
-      // <p>Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada</p>
-      // <p>Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada</p>
-      // <p>Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada Nos vamos a dedicar a la pesca indiscriminada</p>
-      // <a href="/nosotros">Esto te lleva a otro lado</a>
-      // `}
-       />
+      <Article content={content} />
+      <Divider style={{ clear: "both" }} borderColor="gray.300" />
+      <Article content={content} />
+      <Card side="right" icon={<FontAwesomeIcon icon={faEyeSlash} />} bg="teal.400" title="Solemos no ver" content={"Acostumbrados a solo mirar lo que nos rodea. Olvidamos lo que antes hubo. Y que... así como nosotros \"somos\", las civilizaciones que nos precedieron, también \"eran\"."} />
+      <Card icon={<FontAwesomeIcon icon={faEye} />} bg="teal.300" title="Pero, a partir de hoy..." content="Hemos decidido devolverte lo que ya es tuyo. Poder ver lo que te rodea y emocionarte. No por lo que hay ahora. Sino, por lo que hubo. Vivir nuevamente la magia de antaño. Y ver en unas simples ruinas... un, antes, GRANDIOSO IMPERIO." />
     </>
   )
 }
@@ -45,3 +36,4 @@ export async function getStaticProps() {
     }
   }
 }
+
