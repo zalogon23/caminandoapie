@@ -8,6 +8,7 @@ import fontSizes from '../lib/fontSizes'
 function Article({ content }) {
 
   const styledContent = styleContent(content)
+  console.log(styledContent)
 
   return (
     <Box style={{ clear: "both" }} as="section" px="2" w="full" maxW="850px" mx="auto" pb="8" fontSize={fontSizes.paragraph}>
@@ -21,10 +22,10 @@ function Article({ content }) {
               el.content.map((piece, id)=> {
                 if (piece.type === "strong") return (<Text key={`text${id}`} as="strong">{piece.text}</Text>)
                 if (piece.type === "link") return (<Link key={`text${id}`} href={piece.link} passHref><ChakraLink fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{piece.text}</ChakraLink></Link>)
-                return piece
+                if(piece) return piece
               })
             }</Text>}
-            {el.type === "image" && <Image objectPosition="center" maxH="70vh" fit="contain" w={["full", , , "50%"]} mb="8" ml={{ "lg": el.dir === "left" ? "0": "5" }} mr={{ "lg": el.dir === "left" ? "5": "0" }} float={{ "lg": el.dir }} src={el.src} alt={el.alt} />}
+            {el.type === "image" && <Image objectPosition="center" maxH="70vh" fit="contain" w={["full", , , "50%"]} mb="4" ml={{ "lg": el.dir === "left" ? "0": "5" }} mr={{ "lg": el.dir === "left" ? "5": "0" }} float={{ "lg": el.dir }} src={el.src} alt={el.alt} />}
           </React.Fragment>)
       }
     </Box >
@@ -43,7 +44,7 @@ function Article({ content }) {
         openParagraph = false
         return
       }else if (el.indexOf("/") === 0 && openParagraph) {
-        result[result.length - 1].content.push(el.slice(el.indexOf(">") + 1))
+        if(el.slice(el.indexOf(">") + 1)) result[result.length - 1].content.push(el.slice(el.indexOf(">") + 1))
         return
       } else if (el.indexOf("strong>") === 0) {
         if (!openParagraph) return
@@ -55,7 +56,7 @@ function Article({ content }) {
         return
       } else if (el.indexOf("p") === 0) {
         openParagraph = true
-        result.push({ type: "text", content: [el.slice(el.indexOf(">") + 1)] })
+        if(el.slice(el.indexOf(">") + 1)) result.push({ type: "text", content: [el.slice(el.indexOf(">") + 1)] })
         return
       } else if (el.indexOf("img") === 0) {
         openParagraph = false

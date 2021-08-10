@@ -20,8 +20,8 @@ export default function Home({ content }) {
         <EmailRequest />
       </Hero>
       <Article content={content} />
-      <Divider style={{ clear: "both" }} borderColor="gray.300" />
-      <Article content={content} />
+      {/* <Divider style={{ clear: "both" }} borderColor="gray.300" />
+      <Article content={content} /> */}
       <Card side="right" icon={<FontAwesomeIcon icon={faEyeSlash} />} bg="teal.500" title="Solemos no ver" content={"Acostumbrados a solo mirar lo que nos rodea. Olvidamos lo que antes hubo. Y que... así como nosotros \"somos\", las civilizaciones que nos precedieron, también \"eran\"."} />
       <Card icon={<FontAwesomeIcon icon={faEye} />} bg="teal.300" title="Pero, a partir de hoy..." content="Hemos decidido devolverte lo que ya es tuyo. Poder ver lo que te rodea y emocionarte. No por lo que hay ahora. Sino, por lo que hubo. Vivir nuevamente la magia de antaño. Y ver en unas simples ruinas... un, antes, GRANDIOSO IMPERIO." />
       <List title="Objetivos" items={[
