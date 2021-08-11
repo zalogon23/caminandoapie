@@ -7,7 +7,6 @@ import queries from "../lib/queries";
 import Card from "../components/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBrain, faEye, faEyeSlash, faScroll, faTree } from "@fortawesome/free-solid-svg-icons";
-import { Divider } from "@chakra-ui/react";
 import List from "../components/List";
 
 export default function Home({ content }) {
