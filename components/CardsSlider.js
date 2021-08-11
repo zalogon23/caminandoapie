@@ -7,10 +7,10 @@ import fontSizes from '../lib/fontSizes'
 function CardsSlider({ children }) {
   const [current, setCurrent] = useState(0)
   return (
-    <Box w="100%" overflow="hidden" position="relative" display="flex" flexDir="column">
-      <Heading color="teal.500" fontSize={fontSizes.heading} mx="auto" py="12">Algo bueno</Heading>
-      {current !== 0 && <IconButton rounded="100%" colorScheme="teal" bg="teal.400" zIndex="modal" position="absolute" top="49%" left="2.5%" onClick={() => move("left")} icon={<FontAwesomeIcon icon={faArrowLeft} />} />}
-      {!(current >= children.length - 1) && <IconButton rounded="100%" colorScheme="teal" bg="teal.400" zIndex="modal" position="absolute" top="49%" right="2.5%" onClick={() => move("right")} icon={<FontAwesomeIcon icon={faArrowRight} />} />}
+    <Box as="section" w="100%" maxW="780px" mx="auto" overflow="hidden" position="relative" display="flex" flexDir="column">
+      <Heading as="h2" color="teal.500" fontSize={fontSizes.heading} mx="auto" py="12">Algo bueno</Heading>
+      {current !== 0 && <IconButton rounded="100%" colorScheme="teal" bg="teal.400" zIndex="modal" position="absolute" top="51%" left="2.5%" onClick={() => move("left")} icon={<FontAwesomeIcon icon={faArrowLeft} />} />}
+      {!(current >= children.length - 1) && <IconButton rounded="100%" colorScheme="teal" bg="teal.400" zIndex="modal" position="absolute" top="51%" right="2.5%" onClick={() => move("right")} icon={<FontAwesomeIcon icon={faArrowRight} />} />}
       <Box display="flex" pb="16" transitionDuration="500ms" style={{ transform: `translateX(-${current * 100 / children.length}%)` }} w={`${100 * children.length}%`}>
         {children.map(child => <Box w={`${100 / children.length}%`}>{child}</Box>)}
       </Box>
