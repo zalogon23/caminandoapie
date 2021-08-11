@@ -7,7 +7,7 @@ import fontSizes from '../lib/fontSizes'
 function List({ items, title }) {
   return (
     <Box display="flex" justifyContent="center">
-      <Box maxW="850px" fontSize={fontSizes.heading} pt="8" pb="20" px="2" as="ul" alignItems="flex-start" display="flex" flexDir="column" >
+      <Box maxW="850px" fontSize={fontSizes.paragraph} pt="8" pb="20" px="4" as="ul" alignItems="flex-start" display="flex" flexDir="column" >
         <Heading alignSelf="center" fontSize="1.8em" py="14" color="teal.500">{title}</Heading>
         {
           items.map(item => (

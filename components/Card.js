@@ -1,25 +1,17 @@
-import { Box, Heading, Square, Text } from '@chakra-ui/react'
+import { Box, Heading, Text } from '@chakra-ui/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import fontSizes from '../lib/fontSizes'
 
-function Card({ icon, title, content, bg, side = "left" }) {
+function Card({ icon, title, content }) {
   return (
-    <Square style={{ clear: "both" }}  bg={bg}>
-      <Box w="100%" maxW="850px" minHeight="50vh" py="8" alignItems="center" d="flex" flexDir={["column", , "row"]} px={{ "md": "4" }} justifyContent={["center", , side === "left" ? "flex-start" : "flex-end"]} color="gray.800">
-        <Square display={{"md": side === "left" ? "" : "none"}} pt={["8", , "0"]} pr={{ "md": "6" }} pb={["6", , "0"]} fontSize="8rem">
-          {icon}
-        </Square>
-        <Box px="2" maxW="500px">
-          <Heading fontSize={fontSizes.heading} pb="4">{title}</Heading>
-          <Text fontSize={fontSizes.paragraph}>
-            {content}
-          </Text>
-        </Box>
-        <Square display={["none",,side === "left" ? "" : "flex"]} pt={["8", , "0"]} pl={{ "md": "6" }} pb={["6", , "0"]} fontSize="8rem">
-          {icon}
-        </Square>
+    <Box w="90%" maxW="700px" mx="auto" rounded="md" bg="teal.500" p="2">
+      <Box px="4" rounded="lg" bg="white" display="flex" flexDir="column" alignItems="center" py="8">
+        <Heading py="8" fontSize="1.5em">{title}</Heading>
+        <FontAwesomeIcon size="5x" icon={icon} />
+        <Text color="gray.400" py="8" fontSize={fontSizes.paragraph}>{content}</Text>
       </Box>
-    </Square>
+    </Box>
   )
 }
 

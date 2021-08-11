@@ -18,7 +18,7 @@ function Article({ content }) {
             {el.type === "heading" && id === 0 && <Heading as="h2" py="10" textAlign="center" fontSize={fontSizes.heading}>{el.content}</Heading>}
             {el.type === "heading" && id !== 0 && <Heading as="h3" pb="4" fontSize="1.2em">{el.content}</Heading>}
             {el.type === "link" && <Link href={el.link} passHref><ChakraLink d="block" pb="4" fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{el.content}<FontAwesomeIcon style={{ marginLeft: "0.5rem" }} icon={faLink} /></ChakraLink></Link>}
-            {el.type === "text" && <Text lineHeight="2em" color="gray.500" pb="4" fontSize={fontSizes.paragraph}>{
+            {el.type === "text" && <Text lineHeight="2em" color="gray.500" px="2" pb="4" fontSize={fontSizes.paragraph}>{
               el.content.map((piece, id) => {
                 if (piece.type === "strong") return (<Text key={`text${id}`} as="strong">{piece.text}</Text>)
                 if (piece.type === "link") return (<Link key={`text${id}`} href={piece.link} passHref><ChakraLink fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{piece.text}</ChakraLink></Link>)
