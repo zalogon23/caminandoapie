@@ -8,20 +8,19 @@ import fontSizes from '../lib/fontSizes'
 function Article({ content }) {
 
   const styledContent = styleContent(content)
-  console.log(styledContent)
 
   return (
     <Box style={{ clear: "both" }} as="section" px="2" w="full" maxW="850px" mx="auto" pb="8" fontSize={fontSizes.paragraph}>
       {
         styledContent.map((el, id) =>
           <React.Fragment key={id} >
-            {el.type === "heading" && id === 0 && <Heading as="h2" py="10" textAlign="center" fontSize={fontSizes.heading}>{el.content}</Heading>}
+            {el.type === "heading" && id === 0 && <Heading as="h2" py={["6", "12", "16", "24"]} textAlign="center" fontSize={fontSizes.heading}>{el.content}</Heading>}
             {el.type === "heading" && id !== 0 && <Heading as="h3" pb="4" fontSize="1.2em">{el.content}</Heading>}
-            {el.type === "link" && <Link href={el.link} passHref><ChakraLink d="block" pb="4" fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{el.content}<FontAwesomeIcon style={{ marginLeft: "0.5rem" }} icon={faLink} /></ChakraLink></Link>}
+            {el.type === "link" && <Link href={el.link} passHref><ChakraLink aria-label={el.content} d="block" pb="4" fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{el.content}<FontAwesomeIcon style={{ marginLeft: "0.5rem" }} icon={faLink} /></ChakraLink></Link>}
             {el.type === "text" && <Text lineHeight="2em" color="gray.500" px="2" pb="4" fontSize={fontSizes.paragraph}>{
               el.content.map((piece, id) => {
                 if (piece.type === "strong") return (<Text key={`text${id}`} as="strong">{piece.text}</Text>)
-                if (piece.type === "link") return (<Link key={`text${id}`} href={piece.link} passHref><ChakraLink fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{piece.text}</ChakraLink></Link>)
+                if (piece.type === "link") return (<Link key={`text${id}`} href={piece.link} passHref><ChakraLink aria-label={piece.text} fontWeight="bold" color="teal.400" fontSize={fontSizes.paragraph}>{piece.text}</ChakraLink></Link>)
                 if (piece) return piece
               })
             }</Text>}
