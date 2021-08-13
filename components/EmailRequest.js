@@ -12,7 +12,7 @@ function EmailRequest() {
           <Input aria-label="Coloca tu email para suscribirte a nuestras publicaciones, es gratis" fontSize={fontSizes.paragraph} type="email" />
           <FormHelperText fontSize={fontSizes.paragraph}>Estarás recibiendo semanalmente lo mejor de nuestro contenido</FormHelperText>
         </FormControl>
-        <Button aria-label="Enviar mi email" w="full" type="submit" colorScheme="teal">Enviar</Button>
+        <Button aria-label="Enviar mi email" w="full" type="submit" colorScheme="orange">Enviar</Button>
       </Box>
     </Box>
   )

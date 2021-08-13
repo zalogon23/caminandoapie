@@ -26,14 +26,14 @@ function VNavBar({ open: pressedOpen }) {
   }, [pressedOpen])
 
   return (
-    <Box bg="teal.500" d={[(pressedOpen && "block") || (hadTimeToClose && "none") || "block", , , "none"]} as="nav" overflow="hidden" transitionDuration="400ms" transitionProperty="all" h={open ? `${navHeight}rem` : "0rem"}>
+    <Box bg="orange.500" d={[(pressedOpen && "block") || (hadTimeToClose && "none") || "block", , , "none"]} as="nav" overflow="hidden" transitionDuration="400ms" transitionProperty="all" h={open ? `${navHeight}rem` : "0rem"}>
       <Box as="ul">
         <Link href="/">
           <Button
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faHome} />}
-            colorScheme="teal" h={`${itemHeight}rem`} rounded="0" aria-label="Ir a la pagina de inicio" w="100%"
+            colorScheme="orange" h={`${itemHeight}rem`} rounded="0" aria-label="Ir a la pagina de inicio" w="100%"
             color={open ? "white" : "transparent"}
             transitionDuration="150ms"
           >Inicio</Button>
@@ -43,7 +43,7 @@ function VNavBar({ open: pressedOpen }) {
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faPeopleCarry} />}
-            colorScheme="teal" h={`${itemHeight}rem`} rounded="0" aria-label="Ir a la pagina sobre nosotros" w="100%"
+            colorScheme="orange" h={`${itemHeight}rem`} rounded="0" aria-label="Ir a la pagina sobre nosotros" w="100%"
             color={open ? "white" : "transparent"}
             transitionDuration="300ms"
           >Nosotros</Button>
@@ -53,7 +53,7 @@ function VNavBar({ open: pressedOpen }) {
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faPhone} />}
-            colorScheme="teal" h={`${itemHeight}rem`} rounded="0" aria-label="Ir a la pagina de contacto" w="100%"
+            colorScheme="orange" h={`${itemHeight}rem`} rounded="0" aria-label="Ir a la pagina de contacto" w="100%"
             color={open ? "white" : "transparent"}
             transitionDuration="300ms"
           >Contacto</Button>
@@ -63,7 +63,7 @@ function VNavBar({ open: pressedOpen }) {
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faStore} />}
-            colorScheme="teal" h={`${itemHeight}rem`} rounded="0" aria-label="Ir a la tienda" w="100%"
+            colorScheme="orange" h={`${itemHeight}rem`} rounded="0" aria-label="Ir a la tienda" w="100%"
             color={open ? "white" : "transparent"}
             transitionDuration="300ms"
           >Bazar</Button>
@@ -73,7 +73,7 @@ function VNavBar({ open: pressedOpen }) {
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faBook} />}
-            colorScheme="teal" h={`${itemHeight}rem`} rounded="0" aria-label="Ir al blog" w="100%"
+            colorScheme="orange" h={`${itemHeight}rem`} rounded="0" aria-label="Ir al blog" w="100%"
             color={open ? "white" : "transparent"}
             transitionDuration="300ms"
           >BLOG</Button>

@@ -21,20 +21,22 @@ export default function Home({ content, personal }) {
         <EmailRequest />
       </Hero>
       <Article content={content} />
-      <CardBanner side="right" icon={<FontAwesomeIcon icon={faEyeSlash} />} bg="teal.500" title="Solemos no ver" content={"Acostumbrados a solo mirar lo que nos rodea. Olvidamos lo que antes hubo. Y que... así como nosotros \"somos\", las civilizaciones que nos precedieron, también \"eran\"."} />
-      <CardBanner icon={<FontAwesomeIcon icon={faEye} />} bg="teal.300" title="Pero, a partir de hoy..." content="Hemos decidido devolverte lo que ya es tuyo. Poder ver lo que te rodea y emocionarte. No por lo que hay ahora. Sino, por lo que hubo. Vivir nuevamente la magia de antaño. Y ver en unas simples ruinas... un, antes, GRANDIOSO IMPERIO." />
+      <CardBanner side="right" icon={<FontAwesomeIcon icon={faEyeSlash} />} bg="orange.500" title="Solemos no ver"
+        content="Lo que nos rodea es tan fuerte, que no vemos, lo que hubo. Y durante años, yo tampoco lo veía. Pero, tras descubrir la emoción de solo pensar. Que donde estoy parado ocurrió una guerra, una revolución, hubo un imperio, una traición, un amor. Es simplemente indescriptible." />
+      <CardBanner icon={<FontAwesomeIcon icon={faEye} />} bg="orange.300" title="Por eso..."
+        content="Así como en su momento, el azar se encargó de dejarme conocer a distintos personajes. Que me permitieron oler, lo que no sabía siquiera que existía. Yo estoy dispuesto a devolver ese favor. Y ayudarte a encontrar, el valor de lo 'ya ocurrido'." />
       <CardsSlider title="Contenido">
-        <Card title="Personajes" content="Momentos interesantes de las vidas de Carlomagno, Robespierre o Napoleón. Sus proezas y los lugares donde las llevaron a cabo." icon={faChessKing} />
-        <Card title="Sitios Paradisíacos" content="Esta bien aprender sobre grandes seres históricos, pero... No nos olvidemos de la belleza. Y en honor a ella investigaremos lugares que merecen ser visitados. Y que te dejarán sin aliento..." icon={faHiking} />
-        <Card title="Costumbres Únicas" content="Nos dedicaremos a descubrir que es lo que hace de las distintas culturas, algo especial. Y tú decidirás cual te despierta esa chispa para visitarla." icon={faBurn} />
+        <Card aria="Ir al blog a leer sobre costumbres locales" title="Costumbres Únicas" link="/blog" to="¿Cuáles?" content="Nos dedicaremos a descubrir que es lo que hace de las distintas culturas, algo especial. Y tú decidirás cual te despierta esa chispa para visitarla." icon={faBurn} />
+        <Card aria="Ir al blog a leer sobre personajes interesantes" title="Personajes" link="/blog" to="¿Quiénes?" content="Momentos interesantes de las vidas de Carlomagno, Robespierre o Napoleón. Sus proezas y los lugares donde las llevaron a cabo." icon={faChessKing} />
+        <Card aria="Ir al blog a leer sobre lugares paradisiacos" title="Sitios Paradisíacos" link="/blog" to="Quiero conocerlos" content="Esta bien aprender sobre grandes seres históricos, pero... No nos olvidemos de la belleza. Y en honor a ella investigaremos lugares que merecen ser visitados. Y que te dejarán sin aliento..." icon={faHiking} />
       </CardsSlider>
       <Divider style={{ clear: "both" }} borderColor="gray.300" />
       <Article content={personal} />
       <Divider style={{ clear: "both" }} borderColor="gray.300" />
       <List title="Objetivos" items={[
-        { text: "Descubrir nuevos lugares, exóticos y paradisíacos", icon: faTree },
-        { text: "Aprender que ocurrió en ellos para disfrutar mas del paisaje", icon: faBrain },
-        { text: "Planear las mejores rutas de viaje para ahorrar tiempo y dinero", icon: faScroll },
+        { text: "Descubrir nuevos destinos que visitar. Los mas exóticos, inusuales y únicos.", icon: faTree },
+        { text: "Aprender sobre su historia. Que secretos guardan sus paredes. Para poder oirlas.", icon: faBrain },
+        { text: "Planear las mejores rutas de viaje. Para ahorrarnos tiempo y dinero.", icon: faScroll },
       ]} />
     </>
   )

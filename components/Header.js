@@ -14,20 +14,20 @@ function Header() {
 
   return (
     <Box as="header">
-      <Box maxH="15vh" d="flex" minH="4rem" alignItems="center" justifyContent="space-between" bg="teal.400" py="3" px="2">
+      <Box maxH="15vh" d="flex" minH="4rem" alignItems="center" justifyContent="space-between" bg="orange.400" py="3" px="2">
         <Box d="flex" alignItems="center">
           <Link href="/">
-            <IconButton colorScheme="teal" aria-label="Ir a la pagina de inicio" rounded="full">
+            <IconButton colorScheme="orange" aria-label="Ir a la pagina de inicio" rounded="full">
               <FontAwesomeIcon size="2x" icon={faGlobeAfrica} />
             </IconButton>
           </Link>
           <Link href="/" passHref>
-            <ChakraLink color="teal.600" fontSize={fontSizes.heading}>
+            <ChakraLink color="orange.600" fontSize={fontSizes.heading}>
               <Heading as="h1" fontSize="0.85em" px="2">Caminando a pie</Heading>
             </ChakraLink>
           </Link>
         </Box >
-        <IconButton d={{ "lg": "none" }} onClick={switchOpen} colorScheme="teal" aria-label="Abrir el menu de navegacion">
+        <IconButton d={{ "lg": "none" }} onClick={switchOpen} colorScheme="orange" aria-label="Abrir el menu de navegacion">
           <FontAwesomeIcon icon={faBars} />
         </IconButton>
         <HNavBar />
