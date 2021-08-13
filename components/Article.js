@@ -51,7 +51,10 @@ function Article({ content }) {
         result[result.length - 1].content.push({ type: "strong", text: el.slice(el.indexOf(">") + 1) })
         return
       } else if (el.indexOf("a") === 0) {
-        if (openParagraph) { result[result.length - 1].content.push({ type: "link", link: el.slice(el.indexOf('href="') + 6, el.indexOf('"', el.indexOf('href="') + 6)), text: el.slice(el.indexOf(">") + 1) }); return }
+        if (openParagraph) {
+          result[result.length - 1].content.push({ type: "link", link: el.slice(el.indexOf('href="') + 6, el.indexOf('"', el.indexOf('href="') + 6)), text: el.slice(el.indexOf(">") + 1) });
+          return
+        }
         result.push({ type: "link", link: el.slice(el.indexOf('href="') + 6, el.indexOf('"', el.indexOf('href="') + 6)), content: el.slice(el.indexOf(">") + 1) })
         return
       } else if (el.indexOf("p") === 0) {

@@ -38,15 +38,15 @@ function VNavBar({ open: pressedOpen }) {
             transitionDuration="150ms"
           >Inicio</Button>
         </Link>
-        <Link href="/nosotros">
+        <Link href="/sobremi">
           <Button
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faPeopleCarry} />}
-            colorScheme="orange" h={`${itemHeight}rem`} rounded="0" aria-label="Ir a la pagina sobre nosotros" w="100%"
+            colorScheme="orange" h={`${itemHeight}rem`} rounded="0" aria-label="Ir a la pagina sobre mi" w="100%"
             color={open ? "white" : "transparent"}
             transitionDuration="300ms"
-          >Nosotros</Button>
+          >Sobre mí</Button>
         </Link>
         <Link href="/contacto">
           <Button

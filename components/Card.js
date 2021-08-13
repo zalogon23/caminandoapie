@@ -11,6 +11,7 @@ function Card({ icon, title, content, link, to, aria }) {
         <Heading as="h3" pt="8" pb="12" fontSize="1.4em">{title}</Heading>
         <FontAwesomeIcon size="5x" icon={icon} />
         <Text w="90%" color="gray.400" py="10" fontSize={fontSizes.paragraph}>{content}</Text>
+        {/* There's a problem with the link TABBING for accesibility... we need so source of truth above to share the current slide to avoid displaying not-on-screen links */}
         {link && to && <Link href={link} passHref><Button colorScheme="orange" aria-label={aria}>{to}</Button></Link>}
       </Box>
     </Box>

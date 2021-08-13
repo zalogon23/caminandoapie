@@ -17,8 +17,8 @@ function Footer() {
             ¿Cuanta razón puede haber en tan pocas palabras? Personajes como este suelen ser una gran inspiración para mi. 
             No vivimos en tiempos de generales de guerra. Pero la necesidad de disciplina para mover cualquier proyecto adelante es perenne. 
             Y fuera de que este sitio sea para mi una muestra y desafío a la vez. Espero que logren ustedes encontrar esa determinación para avanzar.
-            Personalmente leer y oír de seres tan grandes me motiva a dejar de ser tan pequeño.
-            <Text as="span" color="gray.500" display="block">¡Así que desde acá te incito a que sigas empujando! Para adelante</Text>
+            Personalmente, leer y oír de seres tan grandes. Me motiva a dejar de ser tan pequeño.
+            <Text as="span" color="gray.500" display="block">¡Así que, desde acá, te aplaudo que sigas empujando! Para adelante</Text>
           </Text>
           <Link href="/blog"><Button colorScheme="orange" aria-label="Ir al blog para buscar temas de interes">Descubrir información valiosa</Button></Link>
         </Box>
