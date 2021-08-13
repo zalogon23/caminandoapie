@@ -16,12 +16,12 @@ function HNavBar() {
             leftIcon={<FontAwesomeIcon icon={faHome} />}
             colorScheme="orange" variant="ghost" ml="1">Inicio</Button>
         </Link>
-        <Link href="/nosotros">
+        <Link href="/sobremi">
           <Button
             fontSize={fontSizes.paragraph}
-            aria-label="Ir a la pagina sobre nosotros"
+            aria-label="Ir a la pagina sobre mi"
             leftIcon={<FontAwesomeIcon icon={faPeopleCarry} />}
-            colorScheme="orange" variant="ghost" ml="1">Nosotros</Button>
+            colorScheme="orange" variant="ghost" ml="1">Sobre mí</Button>
         </Link>
         <Link href="/contacto">
           <Button
