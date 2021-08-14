@@ -6,7 +6,7 @@ import SEOHead from "../components/SEOHead";
 import queries from "../lib/queries";
 import CardBanner from "../components/CardBanner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBrain, faBreadSlice, faBurn, faChessKing, faEye, faEyeSlash, faHiking, faScroll, faTree } from "@fortawesome/free-solid-svg-icons";
+import { faBrain, faBurn, faChessKing, faEye, faEyeSlash, faHiking, faScroll, faTree } from "@fortawesome/free-solid-svg-icons";
 import List from "../components/List";
 import Card from "../components/Card";
 import CardsSlider from "../components/CardsSlider";

@@ -18,7 +18,7 @@ function Sobremi({ presentation, projects }) {
         keywords="turismo nosotros sobre mi gonzalo zarate viajes viajero entretenimiento historia europa asia sudamerica mochilero equipaje caminando a pie"
         description="Un breve resumen sobre quien soy y que pretendo con este sitio. Dedicado principalmente a la historia, filosofia, filologia, entre otras disciplinas afines. Y otras un tanto desafinadas." />
       <Hero bigImage="/nosotros.jpg" smImage="/nosotrossmall.jpg" position="center">
-        <Heading as="h2" textAlign="center" fontSize={fontSizes.heading} color={["white", , , "black"]} px="4" py="2" rounded="xl" lineHeight="1.5em" bg={["blackAlpha.700", , , "transparent"]} position="absolute" left="3%" right="3%" top="18%">
+        <Heading as="h2" textAlign="center" fontSize={fontSizes.heading} color={["white", , , "orange.800"]} px="4" py="2" rounded="xl" lineHeight="1.5em" bg={["blackAlpha.700", , , "transparent"]} position="absolute" left="3%" right="3%" top="18%">
           Un poco sobre mí</Heading>
       </Hero>
       <Article content={presentation} />
