@@ -12,7 +12,7 @@ function CardsSlider({ children, title }) {
       {current !== 0 && <IconButton aria-label="Carta anterior" rounded="100%" colorScheme="orange" bg="orange.400" zIndex="modal" position="absolute" top="51%" left="2.5%" onClick={() => move("left")} icon={<FontAwesomeIcon icon={faArrowLeft} />} />}
       {!(current >= children.length - 1) && <IconButton aria-label="Siguiente carta" rounded="100%" colorScheme="orange" bg="orange.400" zIndex="modal" position="absolute" top="51%" right="2.5%" onClick={() => move("right")} icon={<FontAwesomeIcon icon={faArrowRight} />} />}
       <Box display="flex" pb="16" transitionDuration="500ms" style={{ transform: `translateX(-${current * 100 / children.length}%)` }} w={`${100 * children.length}%`}>
-        {children.map((child, id) => <Box key={`card${id}`} w={`${100 / children.length}%`}>{child}</Box>)}
+        {children.map((child, id) => <Box key={`card${id}`} w={`${100 / children.length}%`} visibility={id === current ? "visible" : "hidden"}>{child}</Box>)}
       </Box>
     </Box>
   )
