@@ -15,7 +15,7 @@ function Article({ content }) {
         styledContent.map((el, id) =>
           <React.Fragment key={id} >
             {el.type === "heading" && id === 0 && <Heading as="h2" py={["6", "12", "16", "24"]} textAlign="center" fontSize={fontSizes.heading}>{el.content}</Heading>}
-            {el.type === "heading" && id !== 0 && <Heading as="h3" pb="4" fontSize="1.2em">{el.content}</Heading>}
+            {el.type === "heading" && id !== 0 && <Heading as="h3" px="2" pb="4" color="orange.500" fontSize="1.2em">{el.content}</Heading>}
             {el.type === "link" && <Link href={el.link} passHref><ChakraLink aria-label={el.content} d="block" pb="4" fontWeight="bold" color="orange.400" fontSize={fontSizes.paragraph}>{el.content}<FontAwesomeIcon style={{ marginLeft: "0.5rem" }} icon={faLink} /></ChakraLink></Link>}
             {el.type === "text" && <Text lineHeight="2em" color="gray.500" px="2" pb="4" fontSize={fontSizes.paragraph}>{
               el.content.map((piece, id) => {

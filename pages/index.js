@@ -23,7 +23,7 @@ export default function Home({ content, personal }) {
         <EmailRequest />
       </Hero>
       <Article content={content} />
-      <CardBanner side="right" icon={<FontAwesomeIcon icon={faEyeSlash} />} bg="orange.500" title="Solemos no ver"
+      <CardBanner color="white" side="right" icon={<FontAwesomeIcon icon={faEyeSlash} />} bg="orange.500" title="Solemos no ver"
         content="Lo que nos rodea es tan fuerte, que no vemos, lo que hubo. Y durante años, yo tampoco lo veía. Pero, tras descubrir la emoción de solo pensar. Que donde estoy parado ocurrió una guerra, una revolución, hubo un imperio, una traición, un amor. Es simplemente indescriptible." />
       <CardBanner icon={<FontAwesomeIcon icon={faEye} />} bg="orange.300" title="Por eso..."
         content="Así como en su momento, el azar se encargó de dejarme conocer a distintos personajes. Que me permitieron oler, lo que no sabía siquiera que existía. Yo estoy dispuesto a devolver ese favor. Y ayudarte a encontrar, el valor de lo 'ya ocurrido'." />
@@ -46,7 +46,6 @@ export default function Home({ content, personal }) {
 
 export async function getStaticProps() {
   const result = await client.query({ query: queries.home })
-  console.log(result)
   return {
     props: {
       content: result.data.home.intro,
