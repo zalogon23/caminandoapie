@@ -9,13 +9,13 @@ function Footer() {
       <Box py="8" px="2" bg="orange.400" color="black" w="100%" display="flex" justifyContent="center" alignItems="center">
         <Box rounded="2xl" p="4" pb="12" bg="white" maxW="850px" display="flex" flexDir="column" alignItems="center" justifyContent="center">
           <Heading as="h3" lineHeight="1.5em" pt="6" pb="16" display="flex" flexDir="column" alignItems="center" color="orange.600" fontSize={fontSizes.heading}>
-            "Mientras aun me quede algo por hacer. No habré hecho nada..."
+            `"`Mientras aun me quede algo por hacer. No habré hecho nada...`"`
             <Text color="red.800" as="span" display="block" fontWeight="black">- Julio Cesar</Text>
           </Heading>
           <Image w="10em" h="10em" src="/laurel.png" />
           <Text pt="14" pb="10" color="gray.400" lineHeight="2em" fontSize={fontSizes.paragraph} >
-            ¿Cuanta razón puede haber en tan pocas palabras? Personajes como este suelen ser una gran inspiración para mi. 
-            No vivimos en tiempos de generales de guerra. Pero la necesidad de disciplina para mover cualquier proyecto adelante es perenne. 
+            ¿Cuanta razón puede haber en tan pocas palabras? Personajes como este suelen ser una gran inspiración para mi.
+            No vivimos en tiempos de generales de guerra. Pero la necesidad de disciplina para mover cualquier proyecto adelante es perenne.
             Y fuera de que este sitio sea para mi una muestra y desafío a la vez. Espero que logren ustedes encontrar esa determinación para avanzar.
             Personalmente, leer y oír de seres tan grandes. Me motiva a dejar de ser tan pequeño.
             <Text as="span" color="gray.500" display="block">¡Así que, desde acá, te aplaudo que sigas empujando! Para adelante</Text>
