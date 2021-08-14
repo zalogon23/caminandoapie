@@ -9,7 +9,7 @@ function Footer() {
       <Box py="8" px="2" bg="orange.400" color="black" w="100%" display="flex" justifyContent="center" alignItems="center">
         <Box rounded="2xl" p="4" pb="12" bg="white" maxW="850px" display="flex" flexDir="column" alignItems="center" justifyContent="center">
           <Heading as="h3" lineHeight="1.5em" pt="6" pb="16" display="flex" flexDir="column" alignItems="center" color="orange.600" fontSize={fontSizes.heading}>
-            'Mientras aun me quede algo por hacer. No habré hecho nada...'
+          &apos;Mientras aun me quede algo por hacer. No habré hecho nada...&apos;
             <Text color="red.800" as="span" display="block" fontWeight="black">- Julio Cesar</Text>
           </Heading>
           <Image w="10em" h="10em" src="/laurel.png" />
