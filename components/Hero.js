@@ -6,8 +6,8 @@ function Hero({ smImage, bigImage, children, position = "center" }) {
   return (
     <Box as="section" pos="relative" overflow="hidden" bg="orange.600">
       <Box pos="relative">
-        <Image fallbackSrc="/loading.jpg" w="full" d={{ "lg": "none" }} maxH="90vh" w="100%" objectPosition={position} fit="cover" src={smImage} />
-        <Image fallbackSrc="/loading.jpg" w="full" d={["none", , , "block"]} maxH="90vh" w="100%" objectPosition={position} fit="cover" src={bigImage} />
+        <Image fallbackSrc="/loading.jpg" w="full" d={{ "lg": "none" }} maxH="90vh" objectPosition={position} fit="cover" src={smImage} />
+        <Image fallbackSrc="/loading.jpg" w="full" d={["none", , , "block"]} maxH="90vh" objectPosition={position} fit="cover" src={bigImage} />
         {children}
       </Box>
     </Box>

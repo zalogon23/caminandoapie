@@ -33,8 +33,9 @@ function Contacto({ intro, socialMedia }) {
       <Divider style={{ clear: "both" }} borderColor="gray.400" />
       <CardsSlider title="Medios" >
         {
-          socialMedia.map(social => (
+          socialMedia.map((social, id) => (
             <Card
+              key={`card${id}`}
               icon={icons[social.icon]}
               title={social.title}
               content={social.content}
