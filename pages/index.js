@@ -18,7 +18,7 @@ export default function Home({ content, personal }) {
       <SEOHead
         title="Inicio"
         keywords="turismo viajes viajero entretenimiento historia europa asia sudamerica mochilero equipaje caminando a pie"
-        description="Ven a descubrir la increible historia que esconde el lugar que estás planeando visitar. Para que disfrutes de tu viaje mucho mas de lo que habías pensado." />
+        description="Ven a descubrir la increíble historia que esconde el lugar que estás planeando visitar. Para que disfrutes de tu viaje mucho mas de lo que habías pensado." />
       <Hero smImage="/herosmall.jpg" smAlt="Castillo de color rojizo en medio de un bosque durante un bello atardecer" bigImage="/hero.jpg" bigAlt="Castillo de color blanco en medio de las montañas boscosas, llenas de arboles">
         <EmailRequest />
       </Hero>

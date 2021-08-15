@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import fontSizes from '../lib/fontSizes'
 
-function CardsSlider({ children, title }) {
+function CardsSlider({ children, as = "section", title, pb = "16" }) {
   const [current, setCurrent] = useState(0)
   return (
-    <Box as="section" w="100%" maxW="780px" mx="auto" overflow="hidden" position="relative" display="flex" flexDir="column">
-      <Heading as="h2" color="orange.500" fontSize={fontSizes.heading} mx="auto" py="12">{title}</Heading>
-      {current !== 0 && <IconButton aria-label="Carta anterior" rounded="100%" colorScheme="orange" bg="orange.400" zIndex="modal" position="absolute" top="51%" left="2.5%" onClick={() => move("left")} icon={<FontAwesomeIcon icon={faArrowLeft} />} />}
-      {!(current >= children.length - 1) && <IconButton aria-label="Siguiente carta" rounded="100%" colorScheme="orange" bg="orange.400" zIndex="modal" position="absolute" top="51%" right="2.5%" onClick={() => move("right")} icon={<FontAwesomeIcon icon={faArrowRight} />} />}
-      <Box display="flex" pb="16" transitionDuration="500ms" style={{ transform: `translateX(-${current * 100 / children.length}%)` }} w={`${100 * children.length}%`}>
+    <Box as={as} w="100%" maxW="780px" mx="auto" overflow="hidden" position="relative" display="flex" flexDir="column">
+      {title && <Heading as="h2" color="orange.500" fontSize={fontSizes.heading} mx="auto" py="12">{title}</Heading>}
+      {current !== 0 && <IconButton aria-label="Ver siguiente slide" rounded="100%" colorScheme="orange" bg="orange.400" zIndex="modal" position="absolute" top="51%" left="2.5%" onClick={() => move("left")} icon={<FontAwesomeIcon icon={faArrowLeft} />} />}
+      {!(current >= children.length - 1) && <IconButton aria-label="Ver slide anterior" rounded="100%" colorScheme="orange" bg="orange.400" zIndex="modal" position="absolute" top="51%" right="2.5%" onClick={() => move("right")} icon={<FontAwesomeIcon icon={faArrowRight} />} />}
+      <Box display="flex" pb={pb} transitionDuration="500ms" style={{ transform: `translateX(-${current * 100 / children.length}%)` }} w={`${100 * children.length}%`}>
         {children.map((child, id) => <Box key={`card${id}`} w={`${100 / children.length}%`} visibility={id === current ? "visible" : "hidden"}>{child}</Box>)}
       </Box>
     </Box>
