@@ -26,7 +26,7 @@ function Contacto({ intro, socialMedia }) {
       <SEOHead
         title="Contacto"
         description="Si quieres ponerte en contacto conmigo para pedirme algun topico en especial, o decirme lo que desees. Aqui podras encontrar mis redes sociales." />
-      <Hero smImage="/contactsmall.jpg" bigImage="/contact.jpg">
+      <Hero smImage="/contactsmall.jpg" smAlt="telefono colgando en un fondo blanco" bigImage="/contact.jpg" bigAlt="buzones coloridos en un paisaje con muchas plantas" >
         <Heading as="h2" textAlign="center" fontSize={fontSizes.heading} color="white" px="4" py="2" rounded="xl" lineHeight="1.5em" bg="blackAlpha.700" position="absolute" left="3%" right="3%" top="18%">Pongámonos en contacto</Heading>
       </Hero>
       <Article content={intro} />
