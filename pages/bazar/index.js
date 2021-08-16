@@ -10,7 +10,6 @@ import queries from '../../lib/queries'
 import client from "../../lib/apolloClient"
 
 function Bazar({ products }) {
-  console.log(products)
   return (
     <>
       <SEOHead
