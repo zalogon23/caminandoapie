@@ -31,7 +31,8 @@ export async function getStaticProps({ params: { id } }) {
       seo: result.data.posts[0].seo,
       smImage: result.data.posts[0].smImage,
       bigImage: result.data.posts[0].bigImage,
-    }
+    },
+    revalidate: 10
   })
 }
 
