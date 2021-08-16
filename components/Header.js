@@ -23,7 +23,7 @@ function Header() {
           </Link>
           <Link href="/" passHref>
             <ChakraLink color="orange.600" fontSize={fontSizes.heading}>
-              <Heading as="h1" fontSize="0.85em" px="2">Caminando a pie</Heading>
+              <Heading as="h2" fontSize="0.85em" px="2">Caminando a pie</Heading>
             </ChakraLink>
           </Link>
         </Box >
