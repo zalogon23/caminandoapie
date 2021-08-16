@@ -28,7 +28,7 @@ function VNavBar({ open: pressedOpen }) {
   return (
     <Box bg="orange.500" d={[(pressedOpen && "block") || (hadTimeToClose && "none") || "block", , , "none"]} as="nav" overflow="hidden" transitionDuration="400ms" transitionProperty="all" h={open ? `${navHeight}rem` : "0rem"}>
       <Box as="ul">
-        <Link href="/">
+        <Link href="/" passHref>
           <Button
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
@@ -38,7 +38,7 @@ function VNavBar({ open: pressedOpen }) {
             transitionDuration="150ms"
           >Inicio</Button>
         </Link>
-        <Link href="/sobremi">
+        <Link href="/sobremi" passHref>
           <Button
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
@@ -48,7 +48,7 @@ function VNavBar({ open: pressedOpen }) {
             transitionDuration="300ms"
           >Sobre mí</Button>
         </Link>
-        <Link href="/contacto">
+        <Link href="/contacto" passHref>
           <Button
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
@@ -58,7 +58,7 @@ function VNavBar({ open: pressedOpen }) {
             transitionDuration="300ms"
           >Contacto</Button>
         </Link>
-        <Link href="/bazar">
+        <Link href="/bazar" passHref>
           <Button
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
@@ -68,7 +68,7 @@ function VNavBar({ open: pressedOpen }) {
             transitionDuration="300ms"
           >Bazar</Button>
         </Link>
-        <Link href="/blog">
+        <Link href="/blog" passHref>
           <Button
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}

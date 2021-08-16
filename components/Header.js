@@ -16,7 +16,7 @@ function Header() {
     <Box as="header">
       <Box maxH="15vh" d="flex" minH="4rem" alignItems="center" justifyContent="space-between" bg="orange.400" py="3" px="2">
         <Box d="flex" alignItems="center">
-          <Link href="/">
+          <Link href="/" passHref>
             <IconButton colorScheme="orange" aria-label="Ir a la pagina de inicio" rounded="full">
               <FontAwesomeIcon size="2x" icon={faGlobeAfrica} />
             </IconButton>

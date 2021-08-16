@@ -9,35 +9,35 @@ function HNavBar() {
   return (
     <Box as="nav" d={["none", , , "block"]}>
       <Box as="ul" d="flex">
-        <Link href="/" >
+        <Link href="/" passHref>
           <Button
             fontSize={fontSizes.paragraph}
             aria-label="Ir a la pagina de inicio"
             leftIcon={<FontAwesomeIcon icon={faHome} />}
             colorScheme="orange" variant="ghost" ml="1">Inicio</Button>
         </Link>
-        <Link href="/sobremi">
+        <Link href="/sobremi" passHref>
           <Button
             fontSize={fontSizes.paragraph}
             aria-label="Ir a la pagina sobre mi"
             leftIcon={<FontAwesomeIcon icon={faPeopleCarry} />}
             colorScheme="orange" variant="ghost" ml="1">Sobre mí</Button>
         </Link>
-        <Link href="/contacto">
+        <Link href="/contacto" passHref>
           <Button
             fontSize={fontSizes.paragraph}
             aria-label="Ir a la pagina de contacto"
             leftIcon={<FontAwesomeIcon icon={faPhone} />}
             colorScheme="orange" variant="ghost" ml="1">Contacto</Button>
         </Link>
-        <Link href="/bazar">
+        <Link href="/bazar" passHref>
           <Button
             fontSize={fontSizes.paragraph}
             aria-label="Ir a la tienda"
             leftIcon={<FontAwesomeIcon icon={faStore} />}
             colorScheme="orange" variant="ghost" ml="1">Bazar</Button>
         </Link>
-        <Link href="/blog">
+        <Link href="/blog" passHref>
           <Button
             fontSize={fontSizes.paragraph}
             aria-label="Ir al blog"
