@@ -16,7 +16,7 @@ export default function Blog({ posts }) {
         description="Descubre todo lo que puedas necesitar saber sobre la historia de diversos lugares turísticos, datos curioso sobre viajeros y consejos para nómadas en busca de la tierra prometida."
         keywords="turismo blog posts consejos ayuda viajes viajero entretenimiento historia europa asia sudamerica mochilero equipaje caminando a pie"
       />
-      <Hero bigImage="" bigAlt="" smImage="" smAlt="">
+      <Hero bigImage="/blog.jpg" bigAlt="Libreria con pilares enroscados, cupulas con obras de arte pintadas, y mesas de caoba con modelos a escala de la tierra" smImage="/blogsmall.jpg" smAlt="Escritorio elegante pero austero, con unos libros rojos encima, y una lampara, acompañado de una silla. En biblioteca llena de libros hasta el suelo">
         <Heading as="h2" textAlign="center" fontSize={fontSizes.heading} color="white" px="4" py="2" rounded="xl" lineHeight="1.5em" bg="blackAlpha.700" position="absolute" left="3%" right="3%" top="18%">Descubre todo lo relacionado con viajes, historia y exploración.</Heading>
       </Hero>
       <CardsShelf wide>
