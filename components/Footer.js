@@ -12,7 +12,7 @@ function Footer() {
           &apos;Mientras aun me quede algo por hacer. No habré hecho nada...&apos;
             <Text color="red.800" as="span" display="block" fontWeight="black">- Julio Cesar</Text>
           </Heading>
-          <Image w="10em" h="10em" src="/laurel.png" />
+          <Image w="10em" h="10em" src="/laurel.png" alt="coronas de laureles dorados" />
           <Text pt="14" pb="10" color="gray.400" lineHeight="2em" fontSize={fontSizes.paragraph} >
             ¿Cuanta razón puede haber en tan pocas palabras? Personajes como este suelen ser una gran inspiración para mi.
             No vivimos en tiempos de generales de guerra. Pero la necesidad de disciplina para mover cualquier proyecto adelante es perenne.
