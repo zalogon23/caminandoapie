@@ -14,7 +14,7 @@ function Card({ icon, title, cover, h, content, link, images, to, aria, large = 
         {images &&
           <CardsSlider as="div" pb="0">
             {
-              images.map((img, id) => <Image key={`image${id}`} h={large ? ["16rem", "25rem"] : h ? h : "auto"} w="100%" objectFit={cover ? "cover" : "contain"} src={img.formats.medium.url} alt={img.alternativeText} fallbackSrc=" / loading.jpg" />)
+              images.map((img, id) => <Image key={`image${id}`} h={large ? ["16rem", "25rem"] : h ? h : "auto"} w="100%" objectFit={cover ? "cover" : "contain"} src={img.formats.medium.url} alt={img.alternativeText} fallbackSrc="/loading.jpg" />)
             }
           </CardsSlider>}
         <Text w="90%" color="gray.400" py="10" fontSize={fontSizes.paragraph}>{content}</Text>
