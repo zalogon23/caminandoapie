@@ -30,9 +30,9 @@ function Header() {
         <IconButton d={{ "lg": "none" }} onClick={switchOpen} colorScheme="orange" aria-label="Abrir el menu de navegacion">
           <FontAwesomeIcon icon={faBars} />
         </IconButton>
-        <HNavBar />
+        <HNavBar setOpen={setOpen} />
       </Box>
-      <VNavBar open={open} />
+      <VNavBar setOpen={setOpen} open={open} />
     </Box >
   )
 }

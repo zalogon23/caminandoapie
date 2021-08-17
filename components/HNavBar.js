@@ -5,12 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook, faHome, faPeopleCarry, faPhone, faStore } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 
-function HNavBar() {
+function HNavBar({ setOpen }) {
   return (
     <Box as="nav" d={["none", , , "block"]}>
       <Box as="ul" d="flex">
         <Link href="/" passHref>
           <Button
+            onClick={() => setOpen(false)}
             fontSize={fontSizes.paragraph}
             aria-label="Ir a la pagina de inicio"
             leftIcon={<FontAwesomeIcon icon={faHome} />}
@@ -18,6 +19,7 @@ function HNavBar() {
         </Link>
         <Link href="/sobremi" passHref>
           <Button
+            onClick={() => setOpen(false)}
             fontSize={fontSizes.paragraph}
             aria-label="Ir a la pagina sobre mi"
             leftIcon={<FontAwesomeIcon icon={faPeopleCarry} />}
@@ -25,6 +27,7 @@ function HNavBar() {
         </Link>
         <Link href="/contacto" passHref>
           <Button
+            onClick={() => setOpen(false)}
             fontSize={fontSizes.paragraph}
             aria-label="Ir a la pagina de contacto"
             leftIcon={<FontAwesomeIcon icon={faPhone} />}
@@ -32,6 +35,7 @@ function HNavBar() {
         </Link>
         <Link href="/bazar" passHref>
           <Button
+            onClick={() => setOpen(false)}
             fontSize={fontSizes.paragraph}
             aria-label="Ir a la tienda"
             leftIcon={<FontAwesomeIcon icon={faStore} />}
@@ -39,6 +43,7 @@ function HNavBar() {
         </Link>
         <Link href="/blog" passHref>
           <Button
+            onClick={() => setOpen(false)}
             fontSize={fontSizes.paragraph}
             aria-label="Ir al blog"
             leftIcon={<FontAwesomeIcon icon={faBook} />}

@@ -5,7 +5,7 @@ import Link from "next/link"
 import React, { useEffect, useState } from 'react'
 import fontSizes from '../lib/fontSizes'
 
-function VNavBar({ open: pressedOpen }) {
+function VNavBar({ open: pressedOpen, setOpen: setOpenMandatory }) {
 
   const itemHeight = 3
   const itemMargin = 0.2
@@ -21,7 +21,7 @@ function VNavBar({ open: pressedOpen }) {
       setOpen(false)
       setTimeout(() => {
         setHadTimeToClose(true)
-      }, 300)
+      }, 350)
     }
   }, [pressedOpen])
 
@@ -30,6 +30,7 @@ function VNavBar({ open: pressedOpen }) {
       <Box as="ul">
         <Link href="/" passHref>
           <Button
+            onClick={() => setOpenMandatory(false)}
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faHome} />}
@@ -40,6 +41,7 @@ function VNavBar({ open: pressedOpen }) {
         </Link>
         <Link href="/sobremi" passHref>
           <Button
+            onClick={() => setOpenMandatory(false)}
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faPeopleCarry} />}
@@ -50,6 +52,7 @@ function VNavBar({ open: pressedOpen }) {
         </Link>
         <Link href="/contacto" passHref>
           <Button
+            onClick={() => setOpenMandatory(false)}
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faPhone} />}
@@ -60,6 +63,7 @@ function VNavBar({ open: pressedOpen }) {
         </Link>
         <Link href="/bazar" passHref>
           <Button
+            onClick={() => setOpenMandatory(false)}
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faStore} />}
@@ -70,6 +74,7 @@ function VNavBar({ open: pressedOpen }) {
         </Link>
         <Link href="/blog" passHref>
           <Button
+            onClick={() => setOpenMandatory(false)}
             fontSize={fontSizes.paragraph}
             mt={`${itemMargin}rem`}
             rightIcon={<FontAwesomeIcon icon={faBook} />}
