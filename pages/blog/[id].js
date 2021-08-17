@@ -5,7 +5,8 @@ import client from "../../lib/apolloClient"
 import Article from '../../components/Article'
 import Hero from '../../components/Hero'
 import Share from '../../components/Share'
-import { border, Divider } from '@chakra-ui/react'
+import { Divider, Heading } from '@chakra-ui/react'
+import fontSizes from '../../lib/fontSizes'
 
 function BlogPost({ content, smImage, bigImage, seo, id }) {
   console.log(id)
@@ -15,7 +16,9 @@ function BlogPost({ content, smImage, bigImage, seo, id }) {
       <Hero
         smImage={smImage.formats.medium.url} bigImage={bigImage.formats.medium.url}
         smAlt={smImage.alternativeText} bigAlt={bigImage.alternativeText}
-      />
+      >
+        <Heading as="h2" textAlign="center" fontSize={fontSizes.heading} color="white" px="4" py="2" rounded="xl" lineHeight="1.5em" bg="blackAlpha.700" position="absolute" left="3%" right="3%" top="18%">{seo.title}</Heading>
+      </Hero>
       <Article main content={content} />
       <Divider style={{clear: "both"}} borderColor="gray.400" />
       <Share id={String(id)} />
