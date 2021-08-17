@@ -14,14 +14,20 @@ function Article({ content }) {
       {
         styledContent.map((tag, id) =>
           <React.Fragment key={id} >
-            {tag.tagName.indexOf("h") === 0 && <Heading as={tag.tagName} py={tag.tagName === "h1" | tag.tagName === "h2" ? ["6", "12", "16", "24"] : ["4", "8", , "10"]} textAlign={tag.tagName === "h1" | tag.tagName === "h2" ? "center" : ""} fontSize={tag.tagName === "h1" ? fontSizes.heading : tag.tagName === "h2" ? "1.5em" : "1.3em"} color={tag.tagName === "h1" | tag.tagName === "h2" ? "black" : "orange.500"}>{tag.children[0].content}</Heading>}
-            {tag.tagName === "p" && <Text lineHeight="2em" color="gray.500" px="2" pb="4" fontSize={fontSizes.paragraph}>{
-              tag.children.map((piece, id) => {
-                if (piece.tagName === "strong") return (<Text key={`text${id}`} as="strong">{piece.children[0].content}</Text>)
-                if (piece.tagName === "a") return (<Link key={`text${id}`} href={piece.href} passHref><ChakraLink aria-label={piece.children[0].content} fontWeight="bold" color="orange.400" fontSize={fontSizes.paragraph}>{piece.children[0].content}</ChakraLink></Link>)
-                if (piece.content) return piece.content
-              })
-            }</Text>}
+            {tag.tagName.indexOf("h") === 0 &&
+              <Heading as={tag.tagName}
+                py={tag.tagName === "h1" | tag.tagName === "h2" ? ["6", "12", "16", "24"] : ["4", "8", , "10"]}
+                textAlign={tag.tagName === "h1" | tag.tagName === "h2" ? "center" : ""} lineHeight="1.8em"
+                fontSize={tag.tagName === "h1" ? fontSizes.heading : tag.tagName === "h2" ? "1.5em" : "1.3em"}
+                color={tag.tagName === "h1" | tag.tagName === "h2" ? "black" : "orange.500"}>{tag.children[0].content}</Heading>}
+            {tag.tagName === "p" &&
+              <Text lineHeight="2em" color="gray.500" px="2" pb="4" fontSize={fontSizes.paragraph}>{
+                tag.children.map((piece, id) => {
+                  if (piece.tagName === "strong") return (<Text key={`text${id}`} as="strong">{piece.children[0].content}</Text>)
+                  if (piece.tagName === "a") return (<Link key={`text${id}`} href={piece.href} passHref><ChakraLink aria-label={piece.children[0].content} fontWeight="bold" color="orange.400" fontSize={fontSizes.paragraph}>{piece.children[0].content}</ChakraLink></Link>)
+                  if (piece.content) return piece.content
+                })
+              }</Text>}
             {tag.tagName === "img" && <Image objectPosition="center" maxH="70vh" fit="contain" w={["full", , , "50%"]} mb="4" ml={{ "lg": tag.dir === "left" ? "0" : "5" }} mr={{ "lg": tag.dir === "left" ? "5" : "0" }} float={{ "lg": tag.dir }} src={tag.src} alt={tag.alt} />}
           </React.Fragment>)
       }

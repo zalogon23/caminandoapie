@@ -4,8 +4,11 @@ import queries from '../../lib/queries'
 import client from "../../lib/apolloClient"
 import Article from '../../components/Article'
 import Hero from '../../components/Hero'
+import Share from '../../components/Share'
+import { border, Divider } from '@chakra-ui/react'
 
-function BlogPost({ content, smImage, bigImage, seo }) {
+function BlogPost({ content, smImage, bigImage, seo, id }) {
+  console.log(id)
   return (
     <>
       <SEOHead {...seo} />
@@ -14,6 +17,8 @@ function BlogPost({ content, smImage, bigImage, seo }) {
         smAlt={smImage.alternativeText} bigAlt={bigImage.alternativeText}
       />
       <Article main content={content} />
+      <Divider style={{clear: "both"}} borderColor="gray.400" />
+      <Share id={String(id)} />
     </>
   )
 }
@@ -31,6 +36,7 @@ export async function getStaticProps({ params: { id } }) {
       seo: result.data.posts[0].seo,
       smImage: result.data.posts[0].smImage,
       bigImage: result.data.posts[0].bigImage,
+      id
     },
     revalidate: 10
   })
