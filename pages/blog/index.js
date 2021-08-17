@@ -22,7 +22,7 @@ export default function Blog({ posts }) {
       <CardsShelf title="Posts que pueden interesarte" wide>
         {
           posts.map(post => (
-            <Card cover h={["18rem"]} linkbox key={post.id} title={post.seo.title} link={`/blog/${post.id}`} to="Leer mas" aria={`Ir al post sobre ${post.title}`} content={post.shortContent} images={[post.mainImage]} large={false} />
+            <Card cover h={["18rem"]} linkbox key={post.id} title={post.seo.title} link={`/blog/${post.id}`} to="Leer mas" aria={`Ir al post sobre ${post.seo.title}`} content={post.shortContent} images={[post.mainImage]} large={false} />
           ))
         }
       </CardsShelf>
