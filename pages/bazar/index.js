@@ -46,7 +46,7 @@ function Bazar({ products }) {
       </CardsShelf>
       <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.css" />
       <script async src="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.js"></script>
-      <div id="snipcart" data-config-modal-style="side" data-api-key="MTBiZThjNTItYTk0NC00MzczLTk3YzYtYjlhNjA0ZTJkOTZjNjM3NjI3MjIzNTY3MzY5MjI5" hidden></div>
+      <div id="snipcart" data-config-modal-style="side" data-api-key={process.env.SNIPCART_API_KEY} hidden></div>
     </>
   )
 }
