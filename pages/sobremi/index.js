@@ -9,6 +9,7 @@ import queries from '../../lib/queries'
 import CardBanner from '../../components/CardBanner'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPizzaSlice, faTint, faWater } from '@fortawesome/free-solid-svg-icons'
+import HeroHeading from '../../components/HeroHeading'
 
 function Sobremi({ presentation, projects }) {
   return (
@@ -18,8 +19,7 @@ function Sobremi({ presentation, projects }) {
         keywords="turismo nosotros sobre mi gonzalo zarate viajes viajero entretenimiento historia europa asia sudamerica mochilero equipaje caminando a pie"
         description="Un breve resumen sobre quien soy y que pretendo con este sitio. Dedicado principalmente a la historia, filosofía, filología, entre otras disciplinas afines. Y otras un tanto desafinadas." />
       <Hero bigImage="/nosotros.jpg" bigAlt="autor del caminado a pie mirando hacia en mar en una tarde nublada" smImage="/nosotrossmall.jpg" smAlt="autor de caminado a pie en una playa rocosa durante la tarde" position="center">
-        <Heading as="h2" textAlign="center" fontSize={fontSizes.heading} color={["white", , , "black"]} px="4" py="2" rounded="xl" lineHeight="1.5em" bg={["blackAlpha.700", , , "transparent"]} position="absolute" left="3%" right="3%" top="18%">
-          Un poco sobre mí</Heading>
+        <HeroHeading>Un poco sobre mí</HeroHeading>
       </Hero>
       <Article content={presentation} />
       <CardBanner color="white" icon={<FontAwesomeIcon icon={faPizzaSlice} />} title="Intentando disciplinarme" bg="orange.400"

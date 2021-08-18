@@ -8,6 +8,7 @@ import SEOHead from '../../components/SEOHead'
 import fontSizes from '../../lib/fontSizes'
 import queries from '../../lib/queries'
 import client from "../../lib/apolloClient"
+import HeroHeading from '../../components/HeroHeading'
 
 function Bazar({ products }) {
   return (
@@ -18,9 +19,7 @@ function Bazar({ products }) {
         keywords="turismo bazar tienda articulos chucherias mochilas maletines viajes viajero entretenimiento historia europa asia sudamerica mochilero equipaje caminando a pie"
       />
       <Hero smImage="/smallbazar.jpg" smAlt="un pasillo lleno de luces y adornos orientales y con aires arabes, unos vestidos de seda y lamparas de colores." bigImage="/bazar.jpg" bigAlt="tienda llena de articulos de fino cuero marron, incluyendo maletines, zapatos, billeteras, correas, entre otros" >
-        <Heading as="h2" textAlign="center" fontSize={fontSizes.heading} color="white" px="4" py="2" rounded="xl" lineHeight="1.5em" bg="blackAlpha.800" position="absolute" left="3%" right="3%" top="18%">
-          No olvides llevar provisiones para tu travesía
-        </Heading>
+        <HeroHeading>No olvides llevar provisiones para tu travesía</HeroHeading>
       </Hero>
       <CardsShelf title="Mercaderías exóticas">
         {

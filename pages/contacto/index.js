@@ -10,6 +10,7 @@ import Card from '../../components/Card'
 import CardsSlider from '../../components/CardsSlider'
 import { faFacebook, faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
+import HeroHeading from '../../components/HeroHeading'
 
 function Contacto({ intro, socialMedia }) {
 
@@ -28,7 +29,7 @@ function Contacto({ intro, socialMedia }) {
         keywords="turismo contacto gonzalo zarate viajes viajero entretenimiento historia europa asia sudamerica mochilero equipaje caminando a pie"
         description="Si quieres ponerte en contacto conmigo para pedirme algún tópico en especial, o decirme lo que desees. Aquí podrás encontrar mis redes sociales." />
       <Hero smImage="/contactsmall.jpg" smAlt="telefono colgando en un fondo blanco" bigImage="/contact.jpg" bigAlt="buzones coloridos en un paisaje con muchas plantas" >
-        <Heading as="h2" textAlign="center" fontSize={fontSizes.heading} color="white" px="4" py="2" rounded="xl" lineHeight="1.5em" bg="blackAlpha.700" position="absolute" left="3%" right="3%" top="18%">Pongámonos en contacto</Heading>
+        <HeroHeading>Pongámonos en contacto</HeroHeading>
       </Hero>
       <Article content={intro} />
       <Divider style={{ clear: "both" }} borderColor="gray.400" />
