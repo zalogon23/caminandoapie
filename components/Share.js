@@ -10,8 +10,8 @@ function Share({ id }) {
     <Stack as="section" maxW="750px" alignItems="center" mx="auto" pb="6">
       <Heading textAlign="center" fontSize={fontSizes.heading} py="12">Si te pareció interesante, compártelo</Heading>
       <ButtonGroup isAttached>
-        <Link href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcaminandoapie.vercel.app%2Fblog%2F${id}`} passHref><Button leftIcon={<FontAwesomeIcon icon={faFacebook} />} p="6" fontSize={fontSizes.paragraph} aria-label="Compartir este post en facebook" colorScheme="blue">Facebook</Button></Link>
-        <Link href={`https://api.whatsapp.com/send/?phone&text=Mira%20esto%20https://caminandoapie.vercel.app/blog/${id}`} passHref><Button data-action="share/whatsapp/share" leftIcon={<FontAwesomeIcon icon={faWhatsapp} />} p="6" fontSize={fontSizes.paragraph} aria-label="Compartir este post en whatsapp" colorScheme="whatsapp">Whatsapp</Button></Link>
+        <Link href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcaminandoapie.vercel.app%2Fblog%2F${id}`} passHref><Button p="3" leftIcon={<FontAwesomeIcon icon={faFacebook} />} fontSize={fontSizes.paragraph} aria-label="Compartir este post en facebook" colorScheme="blue">Compartir</Button></Link>
+        <Link href={`https://api.whatsapp.com/send/?phone&text=Mira%20esto%20https://caminandoapie.vercel.app/blog/${id}`} passHref><Button p="3" data-action="share/whatsapp/share" leftIcon={<FontAwesomeIcon icon={faWhatsapp} />} fontSize={fontSizes.paragraph} aria-label="Compartir este post en whatsapp" colorScheme="whatsapp">Enviar a ...</Button></Link>
       </ButtonGroup>
     </Stack>
   )

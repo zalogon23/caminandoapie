@@ -7,7 +7,7 @@ import fontSizes from '../lib/fontSizes'
 function CardsSlider({ children, border, as = "section", title, pb = "16" }) {
   const [current, setCurrent] = useState(0)
   return (
-    <Box as={as} borderTop={border && "#DD6B20 2px solid"} borderBottom={border && "#DD6B20 2px solid"} w="100%" maxW="780px" mx="auto" overflow="hidden" px="4" position="relative" display="flex" flexDir="column">
+    <Box as={as} bg={border && "orange.600"} w="100%" maxW="780px" mx="auto" overflow="hidden" px="4" position="relative" display="flex" flexDir="column">
       {title && <Heading as="h2" color="orange.500" fontSize={fontSizes.heading} mx="auto" py="12">{title}</Heading>}
       {current !== 0 && <IconButton size="lg" aria-label="Ver siguiente slide" rounded="100%" colorScheme="orange" bg="orange.400" zIndex="modal" position="absolute" top="49%" left="1%" onClick={() => move("left")} icon={<FontAwesomeIcon icon={faArrowLeft} />} />}
       {!(current >= children.length - 1) && <IconButton size="lg" aria-label="Ver slide anterior" rounded="100%" colorScheme="orange" bg="orange.400" zIndex="modal" position="absolute" top="49%" right="1%" onClick={() => move("right")} icon={<FontAwesomeIcon icon={faArrowRight} />} />}
