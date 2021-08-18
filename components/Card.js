@@ -5,7 +5,7 @@ import React from 'react'
 import fontSizes from '../lib/fontSizes'
 import CardsSlider from './CardsSlider'
 
-function Card({ icon, linkbox, title, cover, h, content, link, images, to, aria, large = true, w = "100%", maxW = "700px" }) {
+function Card({ icon, linkbox, title, cover, h, content, link, images, to, aria, large = true, w = "100%", maxW = "700px", children }) {
   if (linkbox) {
     return (
       <LinkBox as="article" w={w} maxW={maxW} mx="auto" rounded="md" bg="orange.500" p="2">
@@ -19,6 +19,7 @@ function Card({ icon, linkbox, title, cover, h, content, link, images, to, aria,
 
           <Text w="100%" color="gray.400" pb="10" pt="6" px="4" fontSize={fontSizes.paragraph}>{content}</Text>
           <Box display="flex" flexGrow={1}>
+            <Box alignSelf="flex-end">{children}</Box>
             {link && to && <Link href={link} passHref><LinkOverlay as="button" _hover={{ bg: "orange.600" }} _focus={{ bg: "orange.600" }} alignSelf="flex-end" bg="orange.500" color="white" py="2" px="4" rounded="lg" aria-label={aria}>{to}</LinkOverlay></Link>}
           </Box>
         </Box>
@@ -38,6 +39,7 @@ function Card({ icon, linkbox, title, cover, h, content, link, images, to, aria,
           </CardsSlider>}
         <Text w="90%" color="gray.400" pb="10" pt="6" px="4" fontSize={fontSizes.paragraph}>{content}</Text>
         <Box display="flex" flexGrow={1}>
+          <Box alignSelf="flex-end">{children}</Box>
           {link && to && <Link href={link} passHref><Button alignSelf="flex-end" colorScheme="orange" aria-label={aria}>{to}</Button></Link>}
         </Box>
       </Box>

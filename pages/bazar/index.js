@@ -1,11 +1,9 @@
-import { Heading } from '@chakra-ui/react'
-import { faBrain } from '@fortawesome/free-solid-svg-icons'
+import { Button, Heading } from '@chakra-ui/react'
 import React from 'react'
 import Card from '../../components/Card'
 import CardsShelf from '../../components/CardsShelf'
 import Hero from '../../components/Hero'
 import SEOHead from '../../components/SEOHead'
-import fontSizes from '../../lib/fontSizes'
 import queries from '../../lib/queries'
 import client from "../../lib/apolloClient"
 import HeroHeading from '../../components/HeroHeading'
@@ -31,10 +29,24 @@ function Bazar({ products }) {
               images={prod.images.filter(image => image.formats.medium)}
               title={prod.name}
               content={prod.cardDescription}
-            />
+            >
+              <Button
+              colorScheme="orange"
+                className="snipcart-add-item"
+                data-item-url="/bazar"
+                data-item-id={prod.id}
+                data-item-name={prod.name}
+                data-item-price={prod.price}
+                data-item-description={prod.cardDescription}
+                data-item-image={prod.images.filter(image => image.formats.medium)[0].formats.medium.url}
+              >{`Agregar: $${prod.price}`}</Button>
+            </Card>
           ))
         }
       </CardsShelf>
+      <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.css" />
+      <script async src="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.js"></script>
+      <div id="snipcart" data-config-modal-style="side" data-api-key="MTBiZThjNTItYTk0NC00MzczLTk3YzYtYjlhNjA0ZTJkOTZjNjM3NjI3MjIzNTY3MzY5MjI5" hidden></div>
     </>
   )
 }
