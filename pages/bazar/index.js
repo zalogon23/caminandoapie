@@ -1,4 +1,4 @@
-import { Button, Heading } from '@chakra-ui/react'
+import { Box, Button, Heading } from '@chakra-ui/react'
 import React from 'react'
 import Card from '../../components/Card'
 import CardsShelf from '../../components/CardsShelf'
@@ -31,7 +31,7 @@ function Bazar({ products }) {
               content={prod.cardDescription}
             >
               <Button
-              colorScheme="orange"
+                colorScheme="orange"
                 className="snipcart-add-item"
                 data-item-url="/bazar"
                 data-item-id={prod.id}
@@ -44,9 +44,11 @@ function Bazar({ products }) {
           ))
         }
       </CardsShelf>
+      <Box>
+        <div id="snipcart" data-config-modal-style="side" data-api-key={process.env.SNIPCART_API_KEY} hidden></div>
+      </Box>
       <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.css" />
       <script async src="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.js"></script>
-      <div id="snipcart" data-config-modal-style="side" data-api-key={process.env.SNIPCART_API_KEY} hidden></div>
     </>
   )
 }
