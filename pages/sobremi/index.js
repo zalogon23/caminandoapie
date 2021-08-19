@@ -23,7 +23,7 @@ function Sobremi({ presentation, projects }) {
       </Hero>
       <Article content={presentation} />
       <CardBanner color="white" icon={<FontAwesomeIcon icon={faPizzaSlice} />} title="Intentando disciplinarme" bg="orange.400"
-        content="Elegí este ícono ironicamente pues... Estoy apengándome estrictamente a una alimentación con aires 'celíacos'. Mas verduras y frutas. Evitar el azúcar. Todo lo que me pueda ayudar a rendir al máximo. 🤪" />
+        content="Elegí este ícono ironicamente pues... Estoy apengándome estrictamente a una alimentación con aires 'celíacos'. Mas verduras y frutas. Evitar el azúcar. Todo lo que me pueda ayudar a rendir al máximo." />
       <CardBanner color="white" icon={<FontAwesomeIcon icon={faTint} />} title="Y tomándomelo enserio" bg="orange.500"
         content="También, otro 'cambio positivo'... fue decidir que la temperatura del agua no importa. Así que si hacen 14 grados, y el agua está hielo, igual me toca bañarme en frío (Con el tiempo deja de ser tan 'horrible')." />
       <Article content={projects} />
