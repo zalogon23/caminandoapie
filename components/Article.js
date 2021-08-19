@@ -79,6 +79,7 @@ function Article({ content }) {
         const isEven = countingImages % 2 === 0
         result[result.length - 1].alt = tag.content
         result[result.length - 1].dir = isEven ? "left" : "right"
+        console.log(result[result.length - 1])
       } else {
         result.push(tag)
       }

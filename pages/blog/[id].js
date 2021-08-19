@@ -13,7 +13,7 @@ function BlogPost({ content, smImage, bigImage, seo, id }) {
   console.log(id)
   return (
     <>
-      <SEOHead {...seo} />
+      <SEOHead {...seo} og image={bigImage.formats.medium.url} url={`https://caminandoapie.vercel.app/blog/${id}`} />
       <Hero
         smImage={smImage.formats.medium.url} bigImage={bigImage.formats.medium.url}
         smAlt={smImage.alternativeText} bigAlt={bigImage.alternativeText}
