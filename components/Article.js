@@ -15,7 +15,7 @@ function Article({ content }) {
         styledContent.map((tag, id) =>
           <React.Fragment key={id} >
             {tag.tagName.indexOf("h") === 0 &&
-              <Heading as={tag.tagName}
+              <Heading as={tag.tagName} px="2"
                 py={tag.tagName === "h1" | tag.tagName === "h2" ? ["6", "12", "16", "24"] : ["4", "8", , "10"]}
                 textAlign={tag.tagName === "h1" | tag.tagName === "h2" ? "center" : ""} lineHeight="1.8em"
                 fontSize={tag.tagName === "h1" ? fontSizes.heading : tag.tagName === "h2" ? "1.5em" : "1.3em"}
