@@ -10,7 +10,6 @@ import fontSizes from '../../lib/fontSizes'
 import HeroHeading from '../../components/HeroHeading'
 
 function BlogPost({ content, smImage, bigImage, seo, id }) {
-  console.log(id)
   return (
     <>
       <SEOHead {...seo} og image={bigImage.formats.medium.url} url={`https://caminandoapie.vercel.app/blog/${id}`} />
@@ -32,7 +31,6 @@ export default BlogPost
 export async function getStaticProps({ params: { id } }) {
 
   const result = await client.query({ query: queries.blogPostByID, variables: { id: Number(id) } });
-  console.log(result.data.posts[0])
 
   return ({
     props: {

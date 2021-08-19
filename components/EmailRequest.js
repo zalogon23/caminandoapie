@@ -10,7 +10,6 @@ import queries from '../lib/queries'
 function EmailRequest() {
   const [isOpen, setIsOpen] = useState(true)
   const [addEmailSubscriber, { data, loading, error }] = useMutation(queries.addEmailSubscriber)
-  console.log("Data: ", data, ". Loading: ", loading)
   return (
     <>{(isOpen && !data?.createSubscriber) ?
       <Box pos="absolute" as="article" display={isOpen ? "flex" : "none"} flexDir="column" alignItems="center" rounded="md" p="2" textAlign="center" bottom="5%" left="50%" w="90%" maxW="650px" transform="translateX(-50%)" bg="black">
@@ -33,7 +32,6 @@ function EmailRequest() {
             addEmailSubscriber({ variables: { name: values.name, email: values.email } })
           }} >{
             ({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => {
-              console.log(errors)
               return (
                 < Box rounded="md" d="flex" w="100%" flexDir="column" p="2" as="form" bg="white" onSubmit={handleSubmit} >
                   <FormControl id="name" pb="2">
