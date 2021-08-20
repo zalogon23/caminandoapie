@@ -1,8 +1,6 @@
 import { Box, Heading, Image, Text, Link as ChakraLink } from '@chakra-ui/react'
-import { faLink } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from "next/link"
-import React, { useState } from 'react'
+import React from 'react'
 import fontSizes from '../lib/fontSizes'
 
 function Article({ content }) {

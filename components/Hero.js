@@ -6,8 +6,11 @@ function Hero({ smImage, bigImage, bigAlt, smAlt, children, position = "center" 
   return (
     <Box as="section" pos="relative" overflow="hidden" bg="orange.600">
       <Box pos="relative">
-        <Image fallbackSrc="/loading.jpg" alt={smAlt} w="full" d={{ "lg": "none" }} maxH="90vh" objectPosition={position} fit="cover" src={smImage} />
-        <Image fallbackSrc="/loading.jpg" alt={bigAlt} w="full" d={["none", , , "block"]} maxH="90vh" objectPosition={position} fit="cover" src={bigImage} />
+        <Image
+          fallbackSrc="/loading.jpg"
+          alt={smAlt} w="full" maxH="90vh"
+          objectPosition={position} fit="cover" srcSet={`${smImage} 300w, ${bigImage} 1000w`}
+          sizes="(max-width: 960px) 300px, 1000px" />
         {children}
       </Box>
     </Box>
