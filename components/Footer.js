@@ -20,7 +20,7 @@ function Footer() {
             Personalmente, leer y oír de seres tan grandes. Me motiva a dejar de ser tan pequeño.
             <Text as="span" color="gray.500" display="block">¡Así que, desde acá, te aplaudo que sigas empujando! Para adelante</Text>
           </Text>
-          <Link href="/blog" passHref><Button colorScheme="orange" aria-label="Ir al blog para buscar temas de interes">Descubrir información valiosa</Button></Link>
+          <Link href="/blog" passHref><Button  fontSize={fontSizes.paragraph} colorScheme="orange" aria-label="Ir al blog para buscar temas de interes">Descubrir información valiosa</Button></Link>
         </Box>
       </Box>
       <Link href="/" passHref><ChakraLink p="2" fontSize={fontSizes.paragraph} aria-label="Contactar al desarrollador de este sitio">Desarrollado por <Text as="span" fontWeight="black">Virtualizar</Text></ChakraLink></Link>

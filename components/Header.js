@@ -28,7 +28,7 @@ function Header() {
           </Link>
         </Box >
         <IconButton d={{ "lg": "none" }} onClick={switchOpen} colorScheme="orange" aria-label="Abrir el menu de navegacion">
-          <FontAwesomeIcon icon={faBars} />
+          <FontAwesomeIcon size="1x" icon={faBars} />
         </IconButton>
         <HNavBar setOpen={setOpen} />
       </Box>
