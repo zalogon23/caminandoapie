@@ -20,7 +20,7 @@ function BlogPost({ content, smImage, bigImage, seo, id }) {
         <HeroHeading>{seo.title}</HeroHeading>
       </Hero>
       <Article main content={content} />
-      <Divider style={{ clear: "both" }} borderColor="gray.400" />
+      <Divider style={{ clear: "both" }} borderColor="gray.600" />
       <Share id={String(id)} />
     </>
   )
