@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import fontSizes from '../lib/fontSizes'
 import CardsSlider from './CardsSlider'
+import ImageLoading from './ImageLoading'
 
 function Card({ icon, linkbox, title, cover, h, content, link, images, to, aria, large = true, w = "100%", maxW = "700px", children }) {
   if (linkbox) {
@@ -14,7 +15,7 @@ function Card({ icon, linkbox, title, cover, h, content, link, images, to, aria,
           {icon && <FontAwesomeIcon size="5x" icon={icon} />}
           {images &&
             <Image h={large ? ["16rem", "25rem"] : h ? h : "auto"} px="2" w="100%" objectFit={cover ? "cover" : "contain"}
-              src={images[0].formats.medium.url} alt={images[0].alternativeText} fallbackSrc="/loading.jpg" />
+              src={images[0].formats.medium.url} alt={images[0].alternativeText} fallback={<ImageLoading />} />
           }
 
           <Text w="100%" color="gray.400" pb="10" pt="6" px="4" fontSize={fontSizes.paragraph}>{content}</Text>

@@ -2,6 +2,7 @@ import { Box, Heading, Image, Text, Link as ChakraLink } from '@chakra-ui/react'
 import Link from "next/link"
 import React from 'react'
 import fontSizes from '../lib/fontSizes'
+import ImageLoading from './ImageLoading'
 
 function Article({ content }) {
 
@@ -26,7 +27,7 @@ function Article({ content }) {
                   if (piece.content) return piece.content
                 })
               }</Text>}
-            {tag.tagName === "img" && <Image objectPosition="center" maxH="70vh" fit="contain" w={["full", , , "50%"]} mb="4" ml={{ "lg": tag.dir === "left" ? "0" : "5" }} mr={{ "lg": tag.dir === "left" ? "5" : "0" }} float={{ "lg": tag.dir }} src={tag.src} alt={tag.alt} />}
+            {tag.tagName === "img" && <Image fallback={<ImageLoading />} objectPosition="center" maxH="70vh" fit="contain" w={["full", , , "50%"]} mb="4" ml={{ "lg": tag.dir === "left" ? "0" : "5" }} mr={{ "lg": tag.dir === "left" ? "5" : "0" }} float={{ "lg": tag.dir }} src={tag.src} alt={tag.alt} />}
           </React.Fragment>)
       }
     </Box >
